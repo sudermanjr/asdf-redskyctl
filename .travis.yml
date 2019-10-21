@@ -1,5 +1,5 @@
 language: c
-script: asdf plugin-test reckoner https://github.com/mjhuber/asdf-reckoner.git
+script: asdf plugin-test reckoner https://github.com/mjhuber/asdf-reckoner.git --asdf-tool-version 2.1.1 'reckoner --version'
 before_script:
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
