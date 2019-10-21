@@ -2,7 +2,7 @@
 
 release_path=https://api.github.com/repos/FairwindsOps/reckoner/releases
 cmd="curl -s"
-if [ -n "$OAUTH_TOKEN" ]; then
+if [ -n "$GITHUB_API_TOKEN" ]; then
   cmd="$cmd -H 'Authorization: token $OAUTH_TOKEN'"
 fi
 cmd="$cmd $release_path"
