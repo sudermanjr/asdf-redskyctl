@@ -1,8 +1,11 @@
 language: c
-script: asdf plugin-test reckoner $TRAVIS_BUILD_DIR --asdf-tool-version 2.1.1 'reckoner --version'
 before_script:
-  - git clone https://github.com/asdf-vm/asdf.git
+  - git clone https://github.com/asdf-vm/asdf.git asdf
   - . asdf/asdf.sh
+script:
+  - asdf plugin-add reckoner ./
+  - asdf list-all reckoner
+  - asdf plugin-test reckoner ./ 'reckoner --version'
 os:
   - linux
   - osx
