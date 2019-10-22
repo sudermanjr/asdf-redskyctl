@@ -1,0 +1,25 @@
+name: Main workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install asdf
+        run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
+
+      - name: Install reckoner and run test
+        run: |
+          . $HOME/asdf/asdf.sh
+          asdf plugin-add reckoner $GITHUB_WORKSPACE
+          asdf list-all reckoner
+          asdf plugin-test reckoner $GITHUB_WORKSPACE 'reckoner --version'
