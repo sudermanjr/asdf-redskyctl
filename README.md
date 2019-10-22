@@ -1,6 +1,6 @@
 # asdf-reckoner
 
-[![Build Status](https://github.com/mjhuber/asdf-reckoner/workflows/main/badge.svg)](https://github.com/mjhuber/asdf-reckoner/workflows/main/badge.svg)
+[![Build Status](https://github.com/mjhuber/asdf-reckoner/workflows/main/badge.svg)](https://github.com/mjhuber/asdf-reckoner/actions)
 
 [Reckoner](https://github.com/FairwindsOps/reckoner/) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
