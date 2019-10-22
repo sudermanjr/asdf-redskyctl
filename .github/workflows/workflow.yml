@@ -7,6 +7,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
+        reckoner: [2.1.1]
 
     runs-on: ${{ matrix.os }}
 
@@ -22,4 +23,4 @@ jobs:
           . $HOME/asdf/asdf.sh
           asdf plugin-add reckoner $GITHUB_WORKSPACE
           asdf list-all reckoner
-          asdf plugin-test reckoner $GITHUB_WORKSPACE 'reckoner --version'
+          asdf plugin-test reckoner $GITHUB_WORKSPACE 'reckoner --version' --asdf-tool-version ${{ matrix.reckoner }} 
