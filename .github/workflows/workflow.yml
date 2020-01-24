@@ -6,7 +6,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [linux-amd64, darwin-amd64]
+        os: [ubuntu-latest, macOS-latest]
         redskyctl: [1.3.0]
 
     runs-on: ${{ matrix.os }}
