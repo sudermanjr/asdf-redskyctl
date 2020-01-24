@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
-        reckoner: [2.1.1]
+        redskyctl: [2.1.1]
 
     runs-on: ${{ matrix.os }}
 
@@ -18,9 +18,9 @@ jobs:
       - name: Install asdf
         run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
 
-      - name: Install reckoner and run test
+      - name: Install redskyctl and run test
         run: |
           . $HOME/asdf/asdf.sh
-          asdf plugin-add reckoner $GITHUB_WORKSPACE
-          asdf list-all reckoner
-          asdf plugin-test reckoner $GITHUB_WORKSPACE 'reckoner --version' --asdf-tool-version ${{ matrix.reckoner }} 
+          asdf plugin-add redskyctl $GITHUB_WORKSPACE
+          asdf list-all redskyctl
+          asdf plugin-test redskyctl $GITHUB_WORKSPACE 'redskyctl version' --asdf-tool-version ${{ matrix.redskyctl }}
