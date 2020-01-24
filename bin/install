@@ -31,7 +31,7 @@ install_redskyctl() {
 
   echo "Copying binary"
   tar -zxf ${download_path} --directory $tmp_download_dir
-  cp ${tmp_download_dir}/${platform}/redskyctl ${bin_install_path}
+  cp ${tmp_download_dir}/redskyctl ${bin_install_path}
   chmod +x ${binary_path}
 }
 
